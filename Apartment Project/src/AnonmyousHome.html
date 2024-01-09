@@ -52,7 +52,7 @@ img {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: rgb(233, 237, 239);
+  background-color: white;
 }
 
 nav {
@@ -78,7 +78,7 @@ nav {
 
 .link a {
   font-weight: 500;
-  color: white;
+  color: black;
   transition: 0.3s;
 }
 
@@ -247,7 +247,7 @@ nav {
   overflow:hidden;
   border-radius: 2rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-  background-color: beige;
+  background-color: white;
 }
 .popular__card img{
   background-size: cover;
@@ -268,7 +268,7 @@ nav {
 
 .popular__card__header h4 {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--text-dark);
 }
 
@@ -326,14 +326,14 @@ nav {
 }
 
 .reward__container h4 {
-  max-width: 500px;
+  max-width: 700px;
   margin: auto;
   margin-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 100;
   color: var(--text-dark);
   color: #040404;
-  background-color: rgb(131, 66, 66);
+  background-color: white;
   padding: 5px;
   border-radius: 50px;
  
@@ -462,6 +462,10 @@ nav {
   .footer__container {
     gap: 2rem;
   }
+  div {
+  display: flex;
+  justify-content: center;
+}
 }
 
 </style>
@@ -473,11 +477,7 @@ nav {
       <div class="nav__logo"><img src="image/logo.jpg"></div>
       <ul class="nav__links">
         <li class="link"><a href="#home">Home</a></li>
-        <li class="link"><a href="#book">Book</a></li>
-        <li class="link"><a href="#client">Our client</a></li>
-        <li class="link"><a href="#moto">Our moto</a></li>
-        <li class="link"><a href="#contact">About Us</a></li>
-        <li class="link"><a href="#contact">Contact Us</a></li>
+        
       </ul>
       <ul class="nav__links">
         <li class="link"><a href="admin.html">Admin</a></li>
@@ -498,8 +498,8 @@ nav {
             <div class="form__group">
               <select>
                 <option value="" disabled selected>Rental Cost</option>
-                <option value="2000">2000</option>
-                <option value="3000">3000</option>
+                <option value="2000">Rs.10,000</option>
+                <option value="3000">Rs.20,000</option>
                 
               </select>
             </div>
@@ -507,9 +507,9 @@ nav {
               <div class="input__group">
                 <select>
                   <option value="" disabled selected>Floor Space</option>
-                  <option value="1000x2000">1000x2000</option>
-                  <option value="1500x2500">1500x2500</option>
-                  <option value="2000x3000">2000x3000</option>
+                  <option value="1000">1000 Sq.Ft</option>
+                  <option value="1500">1500 Sq.Ft</option>
+                  
                 </select>
               </div>
             </div>
@@ -556,28 +556,35 @@ nav {
           <img src="image/2bhkinterior.jpg" alt="popular Apartment" />
           <div class="popular__content">
             <div class="popular__card__header">
-              <h4>A - 1 - 1</h4>
+              <h4>2BHK Rooms</h4><br>
             </div>
-            <p><b>Rental Cost:</b> 2500 rupees</p>
-            <p><b>Floor - Size:</b> 1000 x 2000</p>
-            <p><b>Advance Cost:</b> 2500 rupees</p>
-            <p><b>Bedroom:</b> 2BHK</p>
-            <p><b>Location:</b> Chennai</p>
-            <p class="link1"><a  href="Login.html">Book now</a></p>
+            <p><b>Apartment Number:</b> A-1-1</p><br>
+            <p><b>Status:</b> Vacant</p><br>
+            <p><b>Rental Cost:</b> Rs.10,000</p><br>
+
+            <p><b>Floor - Size:</b> 1000 Sq.Ft</p><br>
+
+            <p><b>Advance Cost:</b> Rs.20,000</p><br>
+            
+            
+            <button class="reward__btn">Book Now</button>
+            
           </div>
         </div>
         <div class="popular__card">
           <img src="image/3bhkinterir.jpg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
-              <h4>A - 3 - 1</h4>
+              <h4>3BHK Rooms</h4><br>
             </div>
-            <p><b>Rental Cost:</b> 3500 rupees</p>
-            <p><b>Floor - Size:</b> 2000 x 3000</p>
-            <p><b>Advance Cost:</b> 3000 rupees</p>
-            <p><b>Bedroom:</b> 3BHK</p>
-            <p><b>Location:</b> Chennai</p>
-            <p class="link1"><a  href="Login.html">Book now</a></p>
+            <p><b>Apartment Number:</b> A-5-1</p><br>
+            <p><b>Status:</b> Vacant</p><br>
+            <p><b>Rental Cost:</b> Rs.15,000</p><br>
+            <p><b>Floor - Size:</b> 1500  Sq.Ft</s></p><br>
+            <p><b>Advance Cost:</b> Rs.30,000</p><br>
+            
+            
+            <button class="reward__btn">Book Now</button>
           </div>
         </div>
     </section>
@@ -610,9 +617,9 @@ nav {
 
     <section id="moto" class="section__container">
       <div class="reward__container">
-        <p>100% Assurance</p>
-        <h4>Our dynamic team of three Java developers and two testers collaborates to build and operate an innovative online rental system. With expertise in full-stack Java, we ensure a seamless, secure, and user-friendly experience for property seekers and landlords.</h4>
-        <button class="reward__btn">Join now</button>
+        <p>Welcome Home !</p>
+        <h4>We're thrilled you've landed on our platform, your gateway to finding your perfect apartment. We understand the search can be daunting, so we've made it simple and stress-free. Browse beautiful rentals, explore vibrant neighborhoods, and discover your dream home – all in one place.</h4>
+        <button class="reward__btn">Resgister now</button>
       </div>
     </section>
 

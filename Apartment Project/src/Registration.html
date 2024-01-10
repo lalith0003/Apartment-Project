@@ -29,7 +29,7 @@
             align-items: center;
             justify-content: center;
             height: 115vh;
-            
+
         }
 
         form {
@@ -44,7 +44,7 @@
         }
 
         form * {
-            color: #141212; 
+            color: #141212;
         }
 
         h3 {
@@ -66,7 +66,7 @@
             display: block;
             height: 50px;
             width: 100%;
-            background-color: rgba(127, 118, 118, 0.3); 
+            background-color: rgba(127, 118, 118, 0.3);
             border: none;
             outline: none;
             border-radius: 5px;
@@ -126,42 +126,39 @@
 </head>
 
 <body>
-    <form id="loginForm" onsubmit="return validateForm()">
-        <h3>Registration Login</h3>
-        <label for="username">Username</label>
-        <input type="text" placeholder="Username" id="username" name="username">
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password" name="password">
-        <label for="role">Role:</label>
-        <select id="role" name="role">
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
-        </select>
-        <label for="email">Email</label>
-        <input type="text" placeholder="Email" id="email" name="email">
-        <label for="contact">Contact</label>
-        <input type="text" placeholder="Contact" id="Contact" name="Contact">
-        <div id="error-message" class="error-message"></div>
-        <button type="submit">Register</button>
-        <p style="text-align: center; margin-top: 15px;">Already have an account? <a href="Login.html">Log In</a>.</p>
-    </form>
-    <script>
-        function validateForm() {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            var Role = document.getElementById('Role').value;
-            var Email = document.getElementById('Email').value;
-            var errorMessage = document.getElementById('error-message');
+<form id="loginForm" onsubmit="return validateForm()">
+    <h3>Registration Login</h3>
+    <label for="firstname">First name</label>
+    <input type="text" placeholder="First name" id="firstname" name="firstname">
+    <label for="lastname">Last name</label>
+    <input type="text" placeholder="Last name" id="lastname" name="lastname">
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password" id="password" name="password">
+    <label for="email">Email</label>
+    <input type="text" placeholder="Email" id="email" name="email">
+    <label for="contact">Contact</label>
+    <label for="Contact"></label><input type="text" placeholder="Contact" id="Contact" name="Contact">
+    <div id="error-message" class="error-message"></div>
+    <button type="submit">Register</button>
+    <p style="text-align: center; margin-top: 15px;">Already have an account? <a href="Login.html">Log In</a>.</p>
+</form>
+<script>
+    function validateForm() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var Role = document.getElementById('Role').value;
+        var Email = document.getElementById('Email').value;
+        var errorMessage = document.getElementById('error-message');
 
-            // Simple validation example - You may want to implement more robust validation logic
-            if (username.trim() === '' || password.trim() === '') {
-                errorMessage.innerText = 'Please enter both username and password.';
-                return false;
-            }
-
-            return true;
+        // Simple validation example - You may want to implement more robust validation logic
+        if (username.trim() === '' || password.trim() === '') {
+            errorMessage.innerText = 'Please enter both username and password.';
+            return false;
         }
-    </script>
+
+        return true;
+    }
+</script>
 </body>
 
 </html>

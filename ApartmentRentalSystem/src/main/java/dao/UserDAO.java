@@ -10,7 +10,7 @@ import model.Usermember;
 import Util.DBUtil;
 
 public class UserDAO {
-    // Other methods...
+    
 
     public List<Usermember> getAllUsers() {
         List<Usermember> userList = new ArrayList<>();
@@ -63,5 +63,74 @@ public class UserDAO {
         return user;
     }
 
-    // Other methods...
+    public Usermember getUserByUsername(String username) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBUtil.getConnection();
+
+           
+            String sql = "SELECT * FROM users WHERE firstname = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, username);
+
+            rs = pstmt.executeQuery();
+
+           
+            if (rs.next()) {
+                Usermember user = new Usermember();
+                user.setId(rs.getInt("id"));
+                user.setFirstname(rs.getString("firstname"));
+                user.setContact(rs.getString("contact"));
+
+                
+                return user;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } 
+
+        return null; 
+    }
+    public Usermember getUserByFirstname(String username) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBUtil.getConnection();
+
+          
+            String sql = "SELECT * FROM users WHERE firstname = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, username);
+
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                
+                Usermember user = new Usermember();
+                user.setId(rs.getInt("id"));
+                
+                user.setFirstname(rs.getString("firstname"));
+                user.setLastname(rs.getString("lastname"));
+                user.setContact(rs.getString("contact"));
+                
+                return user;
+            } else {
+                
+                return null; 
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+           
+        } 
+
+       
+        return null; 
+    }
+
 }

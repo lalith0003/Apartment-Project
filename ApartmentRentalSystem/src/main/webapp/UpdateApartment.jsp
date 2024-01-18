@@ -4,8 +4,8 @@
 
 <%
     int id = Integer.parseInt(request.getParameter("id"));
-    String floor_no = request.getParameter("floor_no");
-    String door_no = request.getParameter("door_no");
+    int floor_no = Integer.parseInt(request.getParameter("floor_no"));
+    int door_no = Integer.parseInt(request.getParameter("door_no"));
     String advance_cost = request.getParameter("advance_cost");
     String rental_cost = request.getParameter("rental_cost");
     String bedroom = request.getParameter("bedroom");
@@ -15,7 +15,21 @@
 
     Apartment updatedApartment = new Apartment(id, floor_no, door_no, advance_cost, rental_cost, bedroom, floor_space, status, notice_period);
     ApartmentDAO apartmentDAO = new ApartmentDAO();
-    apartmentDAO.updateApartment(updatedApartment);
-
-    response.sendRedirect("ApartmentDetails.jsp");
+    
+    try {
+        apartmentDAO.updateApartment(updatedApartment);
+%>
+        <script>
+            alert("Apartment updated successfully.");
+            window.location.replace("AdminPage.jsp");
+        </script>
+<%
+    } catch (Exception e) {
+%>
+        <script>
+            alert("Error updating apartment: <%= e.getMessage() %>");
+            window.location.replace("AdminPage.jsp"); 
+        </script>
+<%
+    }
 %>

@@ -8,16 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class LogoutServlet
- */
+
 @WebServlet("/LogoutServlet")
 public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        session.invalidate();
+       
+                // Change this to the actual attribute name
 
-        response.sendRedirect("AdminLogin.jsp");
+                // Invalidate the session (log out the user)
+                session.invalidate();
+
+                // Redirect to the homepage after logout
+                response.sendRedirect("Homepage.jsp");
+          
     }
+       
 }

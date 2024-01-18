@@ -12,11 +12,11 @@ public class RegisterDAO {
 	 public String register(Usermember user) {
 	        Connection con = null;
 	        String result = "You are Registered";
-
+	        
 	        try {
 	            con = DBUtil.getConnection();
 
-	            String sql = "insert into users(firstname, lastname, password, email, contact) values(?,?,?,?,?)";
+	            String sql = "insert into users(firstname, lastname, password, email, contact,role) values(?,?,?,?,?,'User')";
 
 	            try (PreparedStatement ps = con.prepareStatement(sql)) {
 	                ps.setString(1, user.getFirstname());

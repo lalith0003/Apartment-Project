@@ -36,7 +36,7 @@
 
         form {
             width: 400px;
-            background-color: rgba(143, 159, 233, 0.747); /* Adjust background color */
+            background-color: rgba(143, 159, 233, 0.747); 
             border-radius: 10px;
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.1);
@@ -46,7 +46,7 @@
         }
 
         form * {
-            color: #141212; /* Adjust text color */
+            color: #141212; 
         }
 
         h3 {
@@ -68,7 +68,7 @@
             display: block;
             height: 50px;
             width: 100%;
-            background-color: rgba(127, 118, 118, 0.3); /* Adjust input background color */
+            background-color: rgba(127, 118, 118, 0.3); 
             border: none;
             outline: none;
             border-radius: 5px;
@@ -87,7 +87,7 @@
         button {
             margin-top: 30px;
             width: 100%;
-            background-color: #0a0a0a; /* Adjust button background color */
+            background-color: #0a0a0a;
             color: #ffffff;
             padding: 15px 0;
             font-size: 18px;
@@ -99,7 +99,7 @@
 
         button:hover {
             background-color: rgb(20, 68, 150);
-            color: #141212; /* Adjust button hover color */
+            color: #141212; 
         }
 
         .error-message {
@@ -113,17 +113,35 @@
 </head>
 
 <body>
-    <form id="loginForm" action="Login" onsubmit="return validateForm()">
+
+    <%
+        // Check if the loginFailed attribute is set
+        Boolean loginFailed = (Boolean) request.getAttribute("loginFailed");
+        if (loginFailed != null && loginFailed) {
+    %>
+            <script>
+                alert("Invalid username or password. Please try again.");
+            </script>
+    <%
+        }
+    %>
+
+
+  <form action="Login" method="post" class="login-form" >
+
         <h3>User Login</h3>
         <label for="username">Username</label>
-        <input type="text" placeholder="username" id="username" name="username">
+        <input type="text" placeholder="Firstname" id="username" name="username" required>
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password" name="password">
-        <div id="error-message" class="error-message"></div>
+        <input type="password" id="password" name="password" placeholder="password" autocomplete="off" required>
+        
         <button type="submit">Log In</button>
         <p style="text-align: center; margin-top: 15px;">Don't have an account? <a href="Registration.jsp">Sign Up</a>.</p>
     </form>
 
+<script>
+   
+</script>
 
 </body>
 

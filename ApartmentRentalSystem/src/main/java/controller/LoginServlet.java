@@ -19,14 +19,10 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        // Replace this with your actual authentication logic
-        if ("admin".equals(username) && "123".equals(password)) {
-            HttpSession session = request.getSession();
-            session.setAttribute("username", username);
-
-            response.sendRedirect("AdminPage.jsp");
-        } else {
-            response.sendRedirect("AdminLogin.jsp");
-        }
+      
+        HttpSession session = request.getSession();
+        session.getAttribute(username);      
+        response.sendRedirect("Login.jsp");
+        
     }
 }

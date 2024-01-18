@@ -2,8 +2,8 @@ package model;
 
 public class Apartment {
     private int id;
-    private String floorNo;
-    private String doorNo;
+    private int floorNo;
+    private int doorNo;
     private String advanceCost;
     private String rentalCost;
     private String bedroom;
@@ -16,7 +16,7 @@ public class Apartment {
 	public Apartment() {
 		super();
 	}
-	public Apartment(int id, String floorNo, String doorNo, String advanceCost, String rentalCost, String bedroom,
+	public Apartment(int id, int floorNo, int doorNo, String advanceCost, String rentalCost, String bedroom,
 			String floorSpace, String status, String noticePeriod) {
 		super();
 		this.id = id;
@@ -35,16 +35,16 @@ public class Apartment {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getFloorNo() {
+	public int getFloorNo() {
 		return floorNo;
 	}
-	public void setFloorNo(String floorNo) {
+	public void setFloorNo(int floorNo) {
 		this.floorNo = floorNo;
 	}
-	public String getDoorNo() {
+	public int getDoorNo() {
 		return doorNo;
 	}
-	public void setDoorNo(String doorNo) {
+	public void setDoorNo(int doorNo) {
 		this.doorNo = doorNo;
 	}
 	public String getAdvanceCost() {

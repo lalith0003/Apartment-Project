@@ -400,7 +400,7 @@ if(session.getAttribute("username")==null)
         <table>
             <thead>
                 <tr>
-                    <th>Apartment ID</th>
+
                     <th>Apartment name</th>
                     <th>Advance Cost</th>
                     <th>Rental Cost</th>
@@ -414,7 +414,7 @@ if(session.getAttribute("username")==null)
             <tbody>
                 <% for (Apartment apartment : filteredApartments) { %>
                     <tr>
-                        <td><%= apartment.getId() %></td>
+                        
                         <td>A - <%= apartment.getFloorNo() %> - <%= apartment.getDoorNo() %></td>
                         <td><%= apartment.getAdvanceCost() %></td>
                         <td><%= apartment.getRentalCost() %></td>
@@ -440,7 +440,7 @@ if(session.getAttribute("username")==null)
         <table>
             <thead>
                 <tr>
-                    <th>Apartment ID</th>
+                    
                     <th>Apartment name</th>
                     <th>Advance Cost</th>
                     <th>Rental Cost</th>
@@ -458,7 +458,7 @@ if(session.getAttribute("username")==null)
                     for (Apartment apartment : filteredApartments1) { 
                 %>
                     <tr>
-                        <td><%= apartment.getId() %></td>
+                       
                         <td>A - <%= apartment.getFloorNo() %> - <%= apartment.getDoorNo() %></td>
                         <td><%= apartment.getAdvanceCost() %></td>
                         <td><%= apartment.getRentalCost() %></td>
